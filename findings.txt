@@ -1,0 +1,10 @@
+Containers built into docker are light weight processes isolated to an application but which do share some resources of the host system. Below are the findings based on containerization concepts and practical observation:
+1. Kernel and System Resources:
+All the containers use the host machine ‘s operating system kernel which also differentiates between them based on the level of Kernel isolation. To sum up, main difference between virtual machines and containers is that containers do not have their own OS Kernel and that is why containers are so lightweight. They use the host Kernel for process management networking and files systems management. The application of containers means that all the containers within the host will be running on the same Linux kernel.
+2. File System and Volumes:
+Containers are created with an isolated file system, but specific parts of the host’s file system are available if mounted volumes exist. Volumes enable a container to have read and write permissions on some host paths so that it can save data or possible transcribe configuration files from the host to it.
+3. Networking Stack:
+Containers are created with independent files, but some certain areas of host’s files are accessible if mounted volume exists. Some host paths allow a container to have read and write permission in it in order to store data or perhaps copy configuration files from host to the container.
+4. Resource Limits and Cgroups:
+Containers also use the host system CPU and memory and while Docker provides LXC containers resource constraints can be set. This makes certain that no container can hoard all the host’s resources if it is not prohibited.
+In summary, containers share the host's kernel, system resources, and potentially the file system and networking stack, but they remain isolated through namespaces and resource constraints.

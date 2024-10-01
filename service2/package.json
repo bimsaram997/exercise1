@@ -1,0 +1,13 @@
+{
+    "name": "service2",
+    "version": "1.0.0",
+    "description": "Service2 for container system",
+    "main": "service2.js",
+    "dependencies": {
+      "express": "^4.17.1"
+    },
+    "scripts": {
+      "start": "node service2.js"
+    }
+  }
+  

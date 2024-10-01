@@ -1,0 +1,4 @@
+The primary motivation for using the language model was to improve the overall readability, grammar, and structure of the assignment documentation and also
+I used to understand the basics of the containers and structure the code.
+LLM helped in proofreading and refining explanations provided in the assignment. It ensured clarity and coherence in the text, making it easier to follow.
+In some cases, LLM oversimplified technical explanations or provided unnecessary verbosity. It also occasionally misinterpreted complex technical terms or concepts, requiring further corrections.
