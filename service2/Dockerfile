@@ -5,14 +5,14 @@ FROM node:14
 WORKDIR /usr/src/app
 
 # Copy the package.json and install dependencies
-COPY package.json /usr/src/app/
+COPY package.json ./
 RUN npm install
 
-# Copy the rest of the application code
-COPY service2.js /usr/src/app/
+# Copy the application code
+COPY service2.js .
 
-# Expose port 8080 internally
+# Expose port 8080
 EXPOSE 8080
 
 # Run the app
-CMD ["npm", "start"]
+CMD ["node", "service2.js"]

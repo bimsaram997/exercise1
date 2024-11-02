@@ -5,14 +5,14 @@ FROM node:14
 WORKDIR /usr/src/app
 
 # Copy the package.json and install dependencies
-COPY package.json /usr/src/app/
+COPY package.json ./
 RUN npm install
 
-# Copy the rest of the application code
-COPY service1.js /usr/src/app/
+# Copy the application code
+COPY service1.js .
 
-# Expose port 8199 to the outside world
-EXPOSE 8199
+# Expose port 3000
+EXPOSE 3000
 
 # Run the app
-CMD ["npm", "start"]
+CMD ["node", "service1.js"]
