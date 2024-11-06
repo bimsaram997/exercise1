@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service1 Interface</title>
+    <script>
+        function requestService() {
+            fetch('/').then(response => response.json())
+                .then(data => {
+                    document.getElementById('responseArea').value = data.message;
+                });
+        }
+
+        function stopServices() {
+            fetch('/health').then(() => {
+                window.location.href = '/health';
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to Service1</h1>
+    <textarea id="responseArea" rows="10" cols="30"></textarea><br>
+    <button onclick="requestService()">REQUEST</button>
+    <button onclick="stopServices()">STOP</button>
+</body>
+</html>
