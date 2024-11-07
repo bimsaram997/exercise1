@@ -1,7 +1,6 @@
 const express = require('express');
 const { execSync } = require('child_process');
 const os = require('os');
-const axios = require('axios');
 
 const app = express();
 const port = 8199;
@@ -14,20 +13,12 @@ function getSystemInfo() {
   return { ip, processes, diskSpace, uptime };
 }
 
-app.get('/', async (req, res) => {
-  try {
-    // Get Service1 info
-    const service1Info = getSystemInfo();
-
-    // Fetch Service2 info
-    const service2Response = await axios.get('http://service2:8080');
-    const service2Info = service2Response.data;
-
-    // Return combined info
-    res.json({ Service1: service1Info, Service2: service2Info });
-  } catch (error) {
-    res.status(500).send('Error fetching data from Service2');
-  }
+app.get('/', (req, res) => {
+  // Simulate a 2-second delay before responding
+  setTimeout(() => {
+    const info = getSystemInfo();
+    res.json(info);
+  }, 2000);  // Simulate 2 seconds delay
 });
 
 app.listen(port, () => {

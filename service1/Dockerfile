@@ -1,18 +1,18 @@
-# Use an official Node.js image
+# Use official Node.js image
 FROM node:14
 
-# Create the working directory inside the container
+# Set working directory
 WORKDIR /usr/src/app
 
-# Copy the package.json and install dependencies
+# Install dependencies
 COPY package.json /usr/src/app/
 RUN npm install
 
-# Copy the rest of the application code
+# Copy application code
 COPY service1.js /usr/src/app/
 
-# Expose port 8199 to the outside world
+# Expose port 8199 for Service1
 EXPOSE 8199
 
-# Run the app
-CMD ["npm", "start"]
+# Start the application
+CMD ["node", "service1.js"]
